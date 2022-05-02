@@ -7,18 +7,20 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-	
+
 	<context:annotation-config />
-	<bean name="address" 
-		class="com.springdemos.springcore1.constructorinjection.Address">
-		<constructor-arg>
-			<value>12</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>Mount Street</value>
-		</constructor-arg>
-		<constructor-arg>
-			<value>NJ</value>
-		</constructor-arg>
-	</bean>
+	
+	<bean name="addressInMumbai"
+		class="com.springdemos.springcore1.autowiring.annotations.Address"
+		p:housenumber="100" p:street="Main Street" p:city="NY" scope="prototype" />
+	
+	<bean name="addressInChennai"
+		class="com.springdemos.springcore1.autowiring.annotations.Address"
+		p:housenumber="110" p:street="Main Street" p:city="NY" scope="prototype" />
+	
+	
+	
+	<bean name="emp" class="com.springdemos.springcore1.autowiring.annotations.Employee"
+	p:id="11" p:name="John" p:age="20" />
+
 </beans>
